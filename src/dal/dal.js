@@ -18,12 +18,12 @@ pool.query(sql,[],(err,result)=>{
 })})
 
 };
-var addLogin = function(first_name, password, number) {
+var addLogin = function(first_name, password, number, email) {
     if(DEBUG) console.log("logins.pg.dal.addLogin()");
     return new Promise(function(resolve, reject) {
-    const sql = `INSERT INTO public."bcrypt_qap3_info"(first_name, password, number) \
-        VALUES ($1, $2,$3);`;
-        pool.query(sql, [first_name, password, number], (err, result) => {
+    const sql = `INSERT INTO public."bcrypt_qap3_info"(first_name, password, number, email) \
+        VALUES ($1, $2, $3, $4);`;
+        pool.query(sql, [first_name, password, number,email], (err, result) => {
         if (err) {
             if(DEBUG) console.log(err);
             console.log("Error in Add Login")
