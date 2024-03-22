@@ -1,0 +1,15 @@
+{
+  "name": "bcrypt_qap3",
+  "version": "1.0.0",
+  "description": "A Node.js application to display data from bcrypt_qap3_inf table",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.17.1",
+    "method-override": "^3.0.0",
+    "pg": "^8.7.1"
+  }
+}
