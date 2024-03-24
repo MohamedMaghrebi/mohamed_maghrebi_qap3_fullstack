@@ -6,7 +6,7 @@
         <h1>Welcome to bcrypt :</h1>
         <h3><div class="logins content">
             <form action="/logins" method="POST">
-                <h2><b>Logins: </b></h2>
+                <h2><p>Logins: </p></h2>
             <% if (theLogins.length > 0) { %>
                 <% theLogins.forEach(login => { %>
                     <b><%= login.first_name %></b>
@@ -15,20 +15,26 @@
                     <% }) %>
             <% } %>
             </br><label>Add Login:</label></br>
-            <label>Username:
+            
+            <label>first_name:
                 <input type="text" id="first_name" name="first_name" value="<%= locals.first_name %>" required>
             </label>
-            <label>Password:
-                <input type="password" id="password" name="password" value="<%= locals.password %>" required>
-            </label>
-            </br>
-
             <label>number:
                 <input type="text" id="number" name="number" value="<%= locals.number %>" required>
+            </label>
+            <label>last_name:
+                <input type="text" id="last_name" name="last_name" value="<%= locals.last_name %>" required>
             </label>
             <label>email:
                 <input type="text" id="email" name="email" value="<%= locals.email %>" required>
             </label>
+            <br>
+            </br>
+            <label>Password:
+                <input type="password" id="password" name="password" value="<%= locals.password %>" required>
+            </label>
+            </br>
+            
             <button>POST</button>
         </form>
         </div>

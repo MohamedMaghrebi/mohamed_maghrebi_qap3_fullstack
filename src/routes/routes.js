@@ -22,7 +22,7 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
   if(DEBUG) console.log("logins.POST");
   try {
-      await dal.addLogin(req.body.first_name,req.body.password, req.body.number, req.body.email);
+      await dal.addLogin(req.body.first_name,req.body.password, req.body.number, req.body.email, req.body.last_name);
       res.redirect('/logins/');
       console.log("Redirect Happend")
   } catch {
