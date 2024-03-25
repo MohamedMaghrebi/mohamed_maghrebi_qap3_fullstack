@@ -65,11 +65,11 @@ var deleteLogin = function(id) {
     });
   };
 
-  var patchLogin = function(id, first_name, password) {
+  var patchLogin = function(id, first_name, password, last_name) {
     if(DEBUG) console.log("logins.pg.dal.patchLogin()");
     return new Promise(function(resolve, reject) {
-      const sql = `UPDATE public."bcrypt_qap3_info" SET first_name=$2, password=$3 WHERE id=$1;`;
-      pool.query(sql, [id, first_name, password], (err, result) => {
+      const sql = `UPDATE public."bcrypt_qap3_info" SET first_name=$2, password=$3,last_name=$4 WHERE id=$1;`;
+      pool.query(sql, [id, first_name,password,last_name], (err, result) => {
         if (err) {
             reject(err);
           } else {

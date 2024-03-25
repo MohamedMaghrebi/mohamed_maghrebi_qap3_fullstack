@@ -10,6 +10,7 @@
             <% if (theLogins.length > 0) { %>
                 <% theLogins.forEach(login => { %>
                     <b><%= login.first_name %></b>
+                    <b><%= login.last_name %></b>
                     <a href="/logins/<%=login.id%>/edit?first_name=<%=login.first_name%>">edit</a>
                     <a href="/logins/<%=login.id%>/delete?first_name=<%=login.first_name%>">delete</a></br>
                     <% }) %>

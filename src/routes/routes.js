@@ -50,13 +50,13 @@ router.delete('/:id', async (req, res) => {
 
 router.get('/:id/edit', async (req, res) => {
   if(DEBUG) console.log('login.Edit : ' + req.params.id);
-  res.render('logins_patch.ejs', {first_name: req.query.first_name, theId: req.params.id});
+  res.render('logins_patch.ejs', {first_name: req.query.first_name, theId: req.params.id,last_name:req.query.last_name});
 });
 
 router.patch('/:id', async (req, res) => {
   if(DEBUG) console.log('logins.PATCH: ' + req.params.id);
   try {
-      await dal.patchLogin(req.params.id, req.body.first_name, req.body.password);
+      await dal.patchLogin(req.params.id, req.body.first_name, req.body.password, req.body.last_name,);
       res.redirect('/logins/');
   } catch {
       // log this error to an error log file.
